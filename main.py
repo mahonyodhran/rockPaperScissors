@@ -1,9 +1,13 @@
 import random
+from User import User
 
 userWins = 0
 aiWins = 0
-
 selections = ['rock', 'paper', 'scissors']
+
+user = User(input('Hello! Before we start, what is your name: '))
+if(user.name.strip() == ""):
+    user.name = "Joe Bloggs"
 
 while True:
     userSelection = input("Enter Rock/Paper/Scissors to play or Q to quit: ").lower()
@@ -32,7 +36,7 @@ while True:
         print("You lose")
         aiWins +=1
 
-print("\nYou won", userWins,"times")
+print(user.name + " won", userWins,"times")
 print("The AI won", aiWins,"times")
 print("Goodbye!")
     
