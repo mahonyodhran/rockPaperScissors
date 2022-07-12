@@ -3,6 +3,7 @@ from User import User
 
 userWins = 0
 aiWins = 0
+draws = 0
 selections = ['rock', 'paper', 'scissors']
 
 user = User(input('Hello! Before we start, what is your name: '))
@@ -32,11 +33,16 @@ while True:
         print("You win!")
         userWins += 1
         
+    elif userSelection == aiSelection:
+        print("Its a draw!")
+        draws += 1
+        
     else:
         print("You lose")
         aiWins +=1
 
-print(user.name + " won", userWins,"times")
+print("\n" + user.name + " won", userWins,"times")
 print("The AI won", aiWins,"times")
-print("Goodbye!")
+print("There were", draws,"draws")
+print("\nGoodbye!")
     
