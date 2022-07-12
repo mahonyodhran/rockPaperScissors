@@ -5,15 +5,16 @@ userWins = 0
 aiWins = 0
 draws = 0
 selections = ['rock', 'paper', 'scissors']
+keepGoing = True
 
 user = User(input('Hello! Before we start, what is your name: '))
 if(user.name.strip() == ""):
     user.name = "Joe Bloggs"
 
-while True:
+while keepGoing == True:
     userSelection = input("Enter Rock/Paper/Scissors to play or Q to quit: ").lower()
     if userSelection == "q":
-        break
+        keepGoing = False
     
     if userSelection not in selections:
         continue
